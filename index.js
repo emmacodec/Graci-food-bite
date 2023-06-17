@@ -1,14 +1,15 @@
 let menu = document.querySelector('menu-bar');
-let navbar = document.querySelector('.navbar');
+let navbar = document.querySelectorAll('.navbar');
 
-menu.onclick = () =>{
+menu.addEventlistener("click", mobileMenu);
+navbar.forEach(n => n.addEventlistener("click", closeMenu));
 
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
+function mobileMenu ()  {
+    menu.classList.toggle("active");
+    navbar.classList.toggle("active");
 }
 
-window.onscroll = () =>{
-
-    menu.classList.remove('fa-times');
-    navbar.classList.remove('active');
+function closeMenu () {
+    menu-bar.classList.remove("active");
+    navbar.classList.remove("active");
 }
