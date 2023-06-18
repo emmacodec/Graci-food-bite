@@ -1,15 +1,21 @@
 let menu = document.querySelector('menu-bar');
-let navbar = document.querySelectorAll('.navbar');
+let navbar = document.querySelector('.navbar');
 
-menu.addEventlistener("click", mobileMenu);
-navbar.forEach(n => n.addEventlistener("click", closeMenu));
+menu.onclick = () => {
 
-function mobileMenu ()  {
-    menu.classList.toggle("active");
-    navbar.classList.toggle("active");
+    menu.classList.toggle('fa-times');
+    navbar.classList.toggle('active');
+
 }
 
-function closeMenu () {
-    menu-bar.classList.remove("active");
-    navbar.classList.remove("active");
+window.onscroll = () => {
+
+    menu.classList.remove('fa-times');
+    navbar.classList.remove('active');
+
+    if(window.scrollY > 60) {
+        document.querySelector('#scroll-top').classList.add('active');
+    } else {
+        document.querySelector('#scroll-top').classList.remove('active');
+    }
 }
