@@ -466,21 +466,30 @@ header .navbar a:hover{
     color: #ff3838;
 }
 
-#scroll-top{
+.scroll-top{
     position: fixed;
-    top: -120%;
+    bottom: 2rem;
     right: 2rem;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: .5rem 1.5rem;
     font-size: 4rem;
     background: #ff3838;
     color: #fff;
     border-radius: .5rem;
-    transition: 1s linear;
+    transition: all .4s;
     z-index: 1000;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
-#scroll-top.active{
-    top: calc(100% - 12rem);
+.scroll-top.active{
+    bottom: 2rem;
+    pointer-events: auto;
+    opacity: 1;
 }
 
 

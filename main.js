@@ -13,9 +13,14 @@ window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
 
-    if(window.scrollY > 60) {
-        document.querySelector('#scroll-top').classList.add('active');
-    } else {
-        document.querySelector('#scroll-top').classList.remove('active');
-    }
 }
+
+const toTop = document.querySelector('.scroll-top');
+
+window.addEventListener("scroll", () => {
+    if(window.pageYOffset >100) {
+        toTop.classList.add("active");
+    } else {
+        toTop.classList.remove("active");
+    }
+})
