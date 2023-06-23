@@ -149,15 +149,17 @@ header .navbar a:hover{
 .home .img{
     width: 100%;
     padding: 1rem;
-    animation: float 1s linear infinite;
+    animation: bounce 1s infinite;
 }
 
-@keyframes float{
+@keyframes bounce{
   0%, 100%{
-        transform: translateY(0rem);
+        transform: translateY(-25%);
+        animation-timing-function: cubic-bezier(0.8 ,0 ,1 ,1);
     }
     50%{
-        transform: translateY(3rem);
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
     }
 }
 
